@@ -11,7 +11,12 @@ export default function Form(){
 
 
     function signUp(){
-        
+        if(name === ""){
+            setCheckName(true)
+        }
+        else{
+            setCheckName(false)
+        }
     }
 
     function handleName(event){
@@ -39,6 +44,7 @@ export default function Form(){
                     <div className="flex flex-col">
                         <label className="text-[14px]" htmlFor="inputName">Nome</label>
                         <input onChange={handleName} className="text-[14px] p-[5px] outline-0 w-96 rounded-[10px] bg-white" type="text" id="inputName" placeholder="Insira seu nome"/>
+                        <p className='text-[12px] text-red-500'>{checkName ? "Digite um nome!" : ""}</p>
                     </div>
                     <div className="flex flex-col">
                         <label htmlFor="inputEmail">E-mail</label>
