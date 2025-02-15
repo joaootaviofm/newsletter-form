@@ -4,7 +4,7 @@ export default function Form(){
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
-    const [check,setCheck] = useState(null)
+    const [agree,setAgree] = useState(false)
     const [checkName, setCheckName] = useState(false)
     const [checkEmail, setCheckEmail] = useState(false)
     const [checkAgree, setCheckAgree] = useState(false)
@@ -17,6 +17,20 @@ export default function Form(){
         else{
             setCheckName(false)
         }
+
+        if(email === ""){
+            setCheckEmail(true)
+        }
+        else{
+            setCheckEmail(false)
+        }
+
+        if(!agree){
+            setCheckAgree(true)
+        }
+        else{
+            setCheckAgree(false)
+        }
     }
 
     function handleName(event){
@@ -27,10 +41,8 @@ export default function Form(){
         setEmail(event.target.value)
     }
 
-    function handleCheck(event){
-        setCheck(event.target.checked)
-        alert()
-        // not done
+    function handleAgree(event){
+        setAgree(event.target.checked)
     }
 
     return (
@@ -48,16 +60,18 @@ export default function Form(){
                     </div>
                     <div className="flex flex-col">
                         <label htmlFor="inputEmail">E-mail</label>
-                        <input onClick={handleEmail} className="text-[14px] p-[5px] outline-0 w-96 rounded-[10px] bg-white" type="email" id="inputEmail" placeholder="Insira seu melhor e-mail"/>
-                    </div>
+                        <input onChange={handleEmail} className="text-[14px] p-[5px] outline-0 w-96 rounded-[10px] bg-white" type="email" id="inputEmail" placeholder="Insira seu melhor e-mail"/>
+                        <p className="text-[12px] text-red-500">{checkEmail ? "Digite um email!" : ""}</p>
+                    </div>                   
                     <div className="flex flex-col">
                         <div>
-                            <a className="underline" href="#">Leia os termos</a>
+                            <a className="underline" href="#">Read the terms</a>
                         </div>
                         <div className="items-center flex gap-[5px]">
-                            <input onClick={handleCheck} type="checkbox" id="checkTerms" />
+                            <input onClick={handleAgree} type="checkbox" id="checkTerms" />
                             <label htmlFor="checkTerms">I agree</label>
                         </div>
+                            <p className="text-[12px] text-red-500">{checkAgree ? "Accept the terms" : ""}</p>
                     </div>
                     <div className="flex items-center justify-center">
                         <button onClick={signUp} className="text-white cursor-pointer bg-gray-600 hover:bg-gray-700 transition-all duration-500 w-96 rounded-[7px] p-[4px]">Sign up</button>
