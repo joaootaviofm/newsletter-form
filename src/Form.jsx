@@ -54,14 +54,14 @@ export default function Form(){
                 </div>
                 <div className="bg-gray-300 rounded-[5px] p-[20px] flex flex-col gap-[10px]">
                     <div className="flex flex-col">
-                        <label className="text-[14px]" htmlFor="inputName">Nome</label>
-                        <input onChange={handleName} className="text-[14px] p-[5px] outline-0 w-96 rounded-[10px] bg-white" type="text" id="inputName" placeholder="Insira seu nome"/>
-                        <p className='text-[12px] text-red-500'>{checkName ? "Digite um nome!" : ""}</p>
+                        <label className="text-[14px]" htmlFor="inputName">Name</label>
+                        <input onChange={handleName} className="text-[14px] p-[5px] outline-0 w-96 rounded-[10px] bg-white" type="text" id="inputName" placeholder="Enter your name"/>
+                        <p className='text-[12px] text-red-500'>{checkName ? "Enter your name!" : ""}</p>
                     </div>
                     <div className="flex flex-col">
                         <label htmlFor="inputEmail">E-mail</label>
-                        <input onChange={handleEmail} className="text-[14px] p-[5px] outline-0 w-96 rounded-[10px] bg-white" type="email" id="inputEmail" placeholder="Insira seu melhor e-mail"/>
-                        <p className="text-[12px] text-red-500">{checkEmail ? "Digite um email!" : ""}</p>
+                        <input onChange={handleEmail} className="text-[14px] p-[5px] outline-0 w-96 rounded-[10px] bg-white" type="email" id="inputEmail" placeholder="Enter your best e-mail"/>
+                        <p className="text-[12px] text-red-500">{checkEmail ? "Enter an e-mail!" : ""}</p>
                     </div>                   
                     <div className="flex flex-col">
                         <div>
