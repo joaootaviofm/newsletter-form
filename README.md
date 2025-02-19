@@ -1,4 +1,4 @@
-# 🔐 Newsletter Form
+# 📝 Newsletter Form
 
 Welcome to the **NewsLetter Form**, a simple sign up page for a newsletter!
 ## 🚀 Technologies Used
